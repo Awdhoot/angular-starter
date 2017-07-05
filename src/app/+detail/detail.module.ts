@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { routes } from './detail.routes';
 import { DetailComponent } from './detail.component';
+import { TestComponent } from './test.component';
 
 console.log('`Detail` bundle loaded asynchronously');
 
@@ -13,7 +14,7 @@ console.log('`Detail` bundle loaded asynchronously');
     /**
      * Components / Directives/ Pipes
      */
-    DetailComponent,
+    TestComponent, DetailComponent
   ],
   imports: [
     CommonModule,
@@ -23,4 +24,8 @@ console.log('`Detail` bundle loaded asynchronously');
 })
 export class DetailModule {
   public static routes = routes;
+
+  constructor() {
+    console.log('ROUTES -> ', routes);
+  }
 }
